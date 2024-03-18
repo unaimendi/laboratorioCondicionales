@@ -22,6 +22,8 @@ const dameCarta = (): void => {
 	sumaValor(cartaObtenida.valor);
 	mostrarCarta(cartaObtenida.carta);
 	if (modoQueHabriaPasado) {
+		modoFinalPartida = true;
+		cambiarBotones();
 	} else {
 		activarDesactivarBoton(true);
 	}
@@ -98,6 +100,8 @@ const reiniciar = (): void => {
 	contador = 0;
 	modoFinalPartida = false;
 	modoQueHabriaPasado = false;
+	mostrarFeedback("Volvamos a jugar!");
+	if (imgCarta) imgCarta.src = `/src/assets/back.jpg`;
 	muestraPuntuacion();
 	cambiarBotones();
 	activarDesactivarBoton(false);
